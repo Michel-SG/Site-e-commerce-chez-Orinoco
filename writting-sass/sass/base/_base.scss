@@ -1,0 +1,11 @@
+body{
+    @include bodyProperty;
+}
+h1{
+    font-size: 3rem;
+}
+@media screen and (max-width:576px){
+    h1{
+     font-size: 1.3rem;
+    }   
+}

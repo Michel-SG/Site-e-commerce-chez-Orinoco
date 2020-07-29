@@ -1,0 +1,189 @@
+//style de le page principale des produits affichés 
+.titre{
+    text-align: center;
+    margin-top: 20px;  
+}
+#products{
+    &_price::after{
+        content:  "€";
+    }
+}
+.product{
+    @include productProperties;
+}
+ul li{
+    list-style-type: none;
+    font-size:17px;
+}
+.lens{
+        margin: 10px 0px;
+    }
+//fin style de le page principale des produits affichés 
+
+//récapitulatrif des produits achetés 
+.containers{
+    width: 90%;
+    margin: 20px auto;
+    &_header{
+        @include containersProperties;
+        &_title{
+           justify-content: flex-end;
+        }
+    }
+}
+.adress{
+    @include adressProperties;
+}
+.panier{
+    @include panierProperties;
+    &_product{
+        @include panierProductproperties;
+    }
+}
+.panier-content{
+    border-bottom: $border-width solid $cd-line;  
+}
+.total-content{
+    border-bottom: $border-width solid $cd-line;
+}
+.total-container{
+    @include totalContainer;
+    &_cost{
+        @include costProperties;
+    }
+    &_size{
+        @include sizeProperties;
+    }
+}
+//fin récapitulatrif des produit achetés 
+
+//page confirmation
+.confirm{
+    @include confirmationProperties;
+    &_command{
+        font-size: 16px;
+        @include organizedElement;
+    }
+    &_appreciation{
+        font-size:$confirm-size;
+        @include organizedElement;
+    }
+    &_number{
+        font-size: 16px;
+        @include organizedElement; 
+    }
+}
+//fin page confirmation
+
+//style footer
+footer{
+    width: $container-width;
+    padding: 10px 0px;
+    p{
+        @include footerParagraph;
+    }
+}
+.footer--head{
+        background-color: $cd-header;
+    }
+.footer{
+    margin-top: 300px;
+}
+// fin style footer
+
+@media screen and (max-width:768px){
+   .total-container{
+       width: 87%;
+        &_cost{
+            @include mediaQueryCost;
+        }
+        &_size{
+            justify-content: flex-end;
+            padding-right: 3px;
+
+        }
+   } 
+}
+@media screen and (max-width:576px){
+    .product{
+        @include mediaQueryProduct;
+        .container-image{
+            //justify-content:center;
+            margin-bottom: 5px;
+            img{
+                display:block;
+                margin: auto;
+            }
+        }
+        ul li{
+            width: $container-width;
+            padding: 5px 0px;
+            margin: 0px;
+        }
+        ul{
+            padding: 0px;
+            margin: 0px; 
+        }
+        #btn{
+            display:block;
+            margin: auto;   
+        }
+    }
+    //début page panier
+    .total-container{
+        width: $container-width;
+        &_cost{
+            @include mediaQueryContainerCost;
+        }
+        &_size{
+            justify-content: flex-end;
+        }
+    }
+    .containers_header{
+        font-size:$label-size;
+        width:$container-width;
+        margin: 10px auto;
+         &_title{
+            @include conteinerTitle;
+        }
+        .increase-size{
+            width: 110px;
+            justify-content: flex-start;
+        }
+    }
+    .panier{
+        width:$container-width;
+        &_product{
+            @include mediaDueryPanierProduct;
+        }
+        .element-position{
+            justify-content: flex-start;
+        }
+}
+ .adress{
+    font-size: $label-size;
+}  
+label{
+     font-size: $label-size;
+}  
+.confirm{
+    width:90%;
+    margin:20px auto;
+    &_command{
+        font-size: $confirm-size;
+    }
+    &_appreciation{
+        font-size:$label-size;
+        
+    }
+    &_number{
+        font-size: $confirm-size;
+    }
+}   
+      
+    footer{
+        p{
+            font-size: $confirm-size;
+        }
+    }
+}

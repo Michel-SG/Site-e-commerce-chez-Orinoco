@@ -1,0 +1,19 @@
+#formulaire{
+    label{
+        @include labelProperties;
+    }
+    input{
+        @include inputProperties;
+        &:hover{
+            border: 2px solid $cd-btn;
+        }   
+    }
+    #submit{
+        @include submitProperties;
+        background-color:$cd-header;
+        &:hover{
+            color:$cd-btn;
+            cursor: pointer;
+        }
+    }
+}

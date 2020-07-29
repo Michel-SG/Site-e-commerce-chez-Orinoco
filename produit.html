@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Produit Orinoco</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Personnalisation de votre produit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="robots" content="index, follow" />
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/c10c83c5b7.js" crossorigin="anonymous">
+        </script>
+         <link rel="stylesheet" type="text/css" href="writting-sass/public/css/style.css">
+    </head>
+    <body>
+        <header class="header--head">
+            <div class="logo">
+                <img src="writting-sass/public/img/orinoco_logo.png" alt="logo de l'entreprise de commerce en ligne"/>
+                <a href="index.html"><h1>Orinoco</h1></a>
+            </div>
+            <div class="cart">
+                <a href="./panier.html"><i class="fas fa-shopping-basket fa-3x"></i>
+                    <span>0</span >
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="titre"><h2>Votre produit</h2></div>
+            <div id="product"></div>
+            <button id="product-card" class="product-card" onchange="change()" onclick='location.href="panier.html"'>
+                Ajouter au panier
+            </button>
+        </main>
+        <footer class="footer footer--head">
+        <p>Orinoco - Entreprise de commerce en ligne</p>
+        </footer>
+       <!-- <script src="/polyfill.bundle.js"></script>
+        <script src = "/app.bundle.js"></script>-->
+        <script src = "src/produit.js"></script>
+    </body>
+</html>

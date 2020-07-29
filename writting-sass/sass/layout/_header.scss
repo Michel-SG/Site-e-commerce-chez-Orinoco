@@ -1,0 +1,28 @@
+header{
+    @include headerProperties;
+    .logo{
+
+        @include headerLogo;
+        h1{
+            font-family: 'Carter One', cursive;
+            vertical-align: top; 
+        }
+    }
+    .cart{
+        @include headerCart;
+    }
+}
+.header--head{
+    background-color: $cd-header;
+}
+a{
+    text-decoration: none;
+
+}
+@media screen and (max-width:576px){
+    header{
+        .logo{
+            margin-left: 10px;
+        }
+    }
+}

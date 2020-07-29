@@ -1,0 +1,16 @@
+#btn{
+    @include btnSend;
+    background-color:$cd-header;
+    &:hover{
+        color:#0000FF;
+        cursor: pointer;
+    }
+}
+.product-card{
+    @include btnProduct;
+    background-color:$cd-header;
+    &:hover{
+        color:$cd-btn;
+        cursor: pointer;
+    }
+}

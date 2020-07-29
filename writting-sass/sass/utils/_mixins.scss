@@ -1,0 +1,157 @@
+@mixin headerProperties{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@mixin headerLogo{
+    width:300px;
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    margin-left: 30px;
+}
+@mixin headerCart{
+    width:300px;
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+@mixin bodyProperty{
+    width: $container-width;
+    height: $container-width;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 13px;
+}
+@mixin btnSend{
+    font-weight: bold;
+    padding : $btn-paddin;
+}
+@mixin btnProduct{
+    display: block;
+    margin : 50px auto;
+    font-weight: bold;
+    padding : $btn-paddin;
+}
+@mixin productProperties{
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    margin: 0px 50px;
+    border-top: $border-width solid $cd-line;
+    border-bottom: $border-width solid $cd-line;
+}
+@mixin containersProperties{
+    border-bottom: $border-width solid $cd-line;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+@mixin panierProperties{
+    width: 85%;
+    margin: 10px auto 10px auto;
+    display: flex;
+    flex-direction: row;
+}
+@mixin totalContainer{
+    width: 92%;
+    margin: 15px auto 10px auto;
+    display: flex;
+    flex-direction: row;
+}
+@mixin costProperties{
+    width:190px;
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-left: 80px;
+}
+@mixin sizeProperties{
+    justify-content: flex-end;
+    width: 160px;
+    margin-left: 0px;
+    margin-right: 17px;
+    padding: 0px;
+}
+@mixin confirmationProperties{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+}
+@mixin organizedElement{
+    font-weight: bold;
+    text-align: center;
+}
+@mixin adressProperties{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+@mixin panierProductproperties{
+    width:280px;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+@mixin footerParagraph{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+@mixin mediaQueryCost{
+    font-size: 14px;
+    margin-left: 40px;
+    margin-right: 0px;
+    justify-content: flex-start;
+}
+@mixin mediaQueryProduct{
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+@mixin mediaQueryContainerCost{
+    font-size: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: flex-start;
+}
+@mixin conteinerTitle{
+    width: 75px;
+    justify-content: center;
+    border-bottom: none;
+}
+@mixin mediaDueryPanierProduct{
+    width:180px;
+    font-size: $label-size;
+    justify-content: center;
+}
+@mixin labelProperties{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: 258px;
+    font-size: $label-size;
+    font-weight: bold;
+}
+@mixin inputProperties{
+    display: block;
+    margin: auto;
+    width: 250px;
+    height: 20px;
+}
+@mixin submitProperties{
+    width: 258px;
+    margin-top: 20px;
+    margin-bottom: $confirm-size;
+    font-weight: bold;
+    height: 25px;
+    font-size: $confirm-size;
+}
