@@ -17,7 +17,7 @@ const getProduct = async function () {        // création de la fonction asynch
                                         <li class="lens"><strong>Lentille :</strong>
                                         <select id ="product-select" onchange="change();" ></select>
                                         </li> 
-                                        <li><strong>Quantité: </strong> <input id="quantity" type ="number" min="0"> </input></li>
+                                        <li><strong>Quantité: </strong> <input id="quantity" type ="number"  value="1" min="0" required/><span id="recup"></span></li>
                                     </ul>
                                 </div>
                             </div>`;
@@ -27,12 +27,13 @@ const getProduct = async function () {        // création de la fonction asynch
             productSelect.innerHTML += `<option>${result.lenses[i]}</option>`;
         }
         let productCart = document.querySelector(".product-card");
+        
         productCart.addEventListener("click", (event) => {
             let lenses = document.querySelector("select").value;
             let quantity = document.getElementById("quantity").value;
             if (quantity == 0) {
                 event.preventDefault();
-                alert("veuillez sélectionner une quantité s'il vous plait");
+                alert("veuillez sélectionner une quantité supérieur à zéro s'il vous plait");
                 location.reload(); 
             } else if(quantity < 0){
                 alert("veuillez sélectionner une quantité positive s'il vous plait");
@@ -56,7 +57,8 @@ const getProduct = async function () {        // création de la fonction asynch
                         cartItems.push(cartObject);
                     }         
                       //on enregistre les données dans localStorage
-                localStorage.setItem("productInCart",JSON.stringify(cartItems));         
+                localStorage.setItem("productInCart",JSON.stringify(cartItems));
+                        
             }; 
             let cartItemsQuantityNumber = localStorage.getItem("totalCart");
             cartItemsQuantityNumber = parseInt(cartItemsQuantityNumber);
@@ -104,4 +106,12 @@ onloadCartNumbers();
 function change() {
     let select = document.getElementById("product-select");
     select.selectedOptions[0].value;
+}
+function vefification(){
+    let quantity = document.getElementById("quantity").value;
+    if(quantity=="" || quantity<0 || quantity==0){
+        alert("le champ quantité ne peut pas être vide, ni null, ni inférieur à zéro");         
+    }else{
+        location.href="panier.html";
+    }
 }

@@ -1,6 +1,6 @@
 
 let cartItems = JSON.parse(localStorage.getItem("productInCart")) || [];
-let cartCost = localStorage.getItem("totalCost"); 
+let cartCost = localStorage.getItem("totalCost");
 function displayCart() {
     let productsPanier = document.querySelector(".products-panier");
     if (cartItems && productsPanier) {
@@ -10,6 +10,7 @@ function displayCart() {
             productsPanier.innerHTML += `
                 <div class ="panier panier-content" >
                     <h4 class="panier panier_product element-position">${cartItem.name} </h4>  
+                    <h4 class="panier panier_product"> ${cartItem.lenses}</h4>
                     <h4 class="panier panier_product"> ${cartItem.price / 100},00 €  </h4>
                     <h4 class="panier panier_product"> ${cartItem.quantity}</h4>  
                     <h4 class ="panier panier_product" >${(cartItem.price / 100) * cartItem.quantity},00 € </h4>
@@ -27,24 +28,25 @@ function displayCart() {
 let formulaire = document.getElementById("formulaire");
 let headForm = document.querySelector(".containers_header");
 headForm.innerHTML = `<h3 class="containers_header containers_header_title increase-size">Nom du produit</h3>
+                        <h3 class="containers_header containers_header_title">lentilles</h3>
                         <h3 class="containers_header containers_header_title">Prix</h3>
                         <h3 class="containers_header containers_header_title">Quantité</h3>
                         <h3 class="containers_header containers_header_title">Total</h3>`
 formulaire.innerHTML = `<label for="firstName">Nom</label> 
-                    <input type="text" id="firstName" name="nom" pattern="[a-z-'éèA-Z]+" required/>
+                    <input type="text" id="firstName" name="nom" placeholder="exemple:BARACK" pattern="[a-z-'éèA-Z]+" required/>
                     <label for="lastName">Prénom</label>
-                    <input type="text" id="lastName" name="prenom" pattern="[a-z-'éèA-Z]+" required/>
+                    <input type="text" id="lastName" name="prenom" placeholder="exemple:Obama" pattern="[a-z-'éèA-Z]+" required/>
                     <label for="mail">Email</label>
-                    <input type="email" id="mail" name="email" required />
+                    <input type="email" id="mail" name="email" placeholder="exemple:obamabar@yahoo.fr" required />
                     <label for="phone">Téléphone</label>
-                    <input type="tel" id="phone" name="PhoneNumber" pattern="[0-9]{10}"/>              
+                    <input type="tel" id="phone" name="PhoneNumber" placeholder="exemple:0767675458" pattern="[0-9]{10}"/>              
                     <p class="adress">Adresse de livraison</p>
                     <label for="address">Rue</label>
-                    <input type="text" name=" rue" id="address" pattern="[0-9 'éèa-zA-Z]+" required/>
+                    <input type="text" name=" rue" id="address" placeholder="exemple:7 rue guy môquet" pattern="[0-9 'éèa-zA-Z]+" required/>
                     <label for="city">Ville</label>
-                    <input type="text" name=" ville" id="city" value="" pattern="[a-z-'éè A-Z]+" required/>
+                    <input type="text" name=" ville" id="city" value="" placeholder="exemple:Grenoble" pattern="[a-z-'éè A-Z]+" required/>
                     <label for="pays">Pays</label>
-                    <input type="text" id="pays" name="pays" required />
+                    <input type="text" id="pays" name="pays" placeholder="exemple:France" required />
                     <input type="submit" value="envoyer" id="submit"/>`
 function onloadCartNumbers() {
     let cartItemsQuantityNumber = localStorage.getItem("totalCart");
